@@ -115,6 +115,11 @@ clustOptimal <- function(clueObj, rep=5, user.maxK=NULL, effectiveSize=NULL, pva
   
   results <- list()
   results$clustObj <- bst.clustObj
-  results$enrichList <- bst.enrichList
+  if (exists("bst.enrichList")) {
+    results$enrichList <- bst.enrichList
+  }
+  else {
+    results$enrichList <- NULL
+  }
   return(results)
 }
